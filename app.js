@@ -1,5 +1,5 @@
 require('dotenv').config();
-const express = require('express'); // Corrige el typo de epxress a express
+const express = require('express'); // Corregido "epxress" a "express"
 const cors = require('cors');
 const app = express();
 const { dbConnect } = require('./config/mongo');
@@ -13,10 +13,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'custom_header'], // Agrega custom_header aquí
 }));
 
-app.use(express.json()); // Corrige el typo de epxress a express
-app.use(express.static('public')); // Corrige el typo de epxress a express
+app.use(express.json()); // Corregido "epxress" a "express"
+app.use(express.static('public')); // Corregido "epxress" a "express"
 app.use('/api/1.0', require('./app/routes'));
 
 app.listen(PORT, () => {
-    console.log(`Tu API es https://api-angularfy.vercel.app:${PORT}/api/1.0`);
+    console.log(`Tu API está corriendo en https://api-angularfy.onrender.com:${PORT}/api/1.0`);
 });
