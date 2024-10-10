@@ -7,11 +7,12 @@ const { dbConnect } = require('./config/mongo');
 const PORT = process.env.PORT || 3000;
 
 // Configuración de CORS
-const corsOptions = {
-    origin: 'https://angularfy-app.netlify.app', // Cambia esto a la URL de tu frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Métodos permitidos
-    allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
-};
+app.use(cors({
+  origin: 'https://angularfy-app.netlify.app', // Permite este dominio
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'custom_header'], // Agrega custom_header aquí
+}));
+
 
 // Usa el middleware CORS con las opciones configuradas
 app.use(cors(corsOptions));
