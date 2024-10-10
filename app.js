@@ -13,9 +13,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'custom_header'], // Agrega custom_header aquí
 }));
 
-
-// Usa el middleware CORS con las opciones configuradas
-app.use(cors(corsOptions));
 app.use(express.json()); // Corrige el typo de epxress a express
 app.use(express.static('public')); // Corrige el typo de epxress a express
 app.use('/api/1.0', require('./app/routes'));
