@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Configuración de CORS
 app.use(cors({
-  origin: 'https://angularfy-app.netlify.app', // Permite este dominio
+  origin: 'https://angularfy-app.vercel.app', // Permite este dominio
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'custom_header'], // Agrega custom_header aquí si lo usas
 }));
