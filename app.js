@@ -13,6 +13,13 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'custom_header'], // Agrega custom_header aquí si lo usas
 }));
 
+// Permitir el uso de iframes desde un dominio específico
+app.use((req, res, next) => {
+    res.setHeader('X-Frame-Options', 'ALLOW-FROM https://portfolio-iota-coral-38.vercel.app'); // Cambia 'tu-dominio.com' por el dominio donde se cargará el iframe
+    res.setHeader("Content-Security-Policy", "frame-ancestors 'self' https://portfolio-iota-coral-38.vercel.app"); // Cambia 'tu-dominio.com' por el dominio donde se cargará el iframe
+    next();
+});
+
 app.use(express.json());
 app.use(express.static('public'));
 app.use('/api/1.0', require('./app/routes'));
